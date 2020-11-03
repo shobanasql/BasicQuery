@@ -1,0 +1,122 @@
+Basic Queries:
+
+1)create table user(userid int,fname varchar(200),lname varchar(200),Email varchar(200),Number int);
+
+2)create table usersdet(userid int,fname varchar(200),lname varchar(200),Email varchar(200),Number int);
+
+3)describe usersdet;
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| userid | int(11)      | YES  |     | NULL    |       |
+| fname  | varchar(200) | YES  |     | NULL    |       |
+| lname  | varchar(200) | YES  |     | NULL    |       |
+| Email  | varchar(200) | YES  |     | NULL    |       |
+| Number | int(11)      | YES  |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+
+4)insert into usersdet (userid,fname,lname,Email,Number)values(1,'mani','kandan','manikandan@gmail.com',123);
+
+5) insert into usersdet (userid,fname,lname,Email,Number)values(2,'pano','priya','panipriya@gmail.com',1234);
+
+6)select * from usersdet;
++--------+-------+-------+-----------------+----------+
+| userid | fname | lname | Email           | Number     |
++--------+-------+-------+-----------------+----------+
+|      1 | mani  | kandan | manikandan@gmail.com | 1234 |
+|      2 | pano  | priya  | panipriya@gmail.com | 5678 |
++--------+-------+-------+-----------------+----------+
+
+
+
+Basic Queries:
+
+1)desc student;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| stu_id     | int(11)      | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(200) | YES  |     | NULL    |                |
+| dept       | varchar(200) | YES  |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+
+
+2) insert into student(stu_id,name,dept)values(1,'kani','ECE');
+   insert into student(stu_id,name,dept)values(2,'kaethiga','CSE');
+   insert into student(stu_id,name,dept)values(3,'venisha','MECH');
+   insert into student(stu_id,name,dept)values(4,'vani','EEE');
+   insert into student(stu_id,name,dept)values(5,'ruku','CIVIL');
+
+3)update student SET dept='ECE' WHERE DEPT='Electronics';
+  
+ select * from student;
++------------+--------+------------------+
+| stu_id     | name    | dept             |
++------------+--------+------------------+
+|          1 | kani    |ELECTRONICS             |
+|          2 | karthiga   |CSE               |
+|          3 | venisha | MECH             |
+|          4 | vani    | EEE              |
+|          5 | ruku    |CIVIL             |
++------------+--------+------------------+
+
+4)select student.name,student.DEPt from 
+  student ORDER BY name;
++--------+------------------+
+| name      | dept          |
++--------+------------------+
+| kani      | ECE           |
+| kathiga   | CSE           |
+| venisha   | MECH          |
+| vani      | EEE           |
+| ruku      | CIVIL         |
++--------+------------------+
+
+
+5)select student.name,
+student.dept from
+student ORDER BY name desc;
++--------+------------------+
+| name   | dept             |
++--------+------------------+
+| venisha   | MECH          |
+| vani   | EEE              |
+| ruku   | CIVIL            |
+| kani   | ECE              |
+| karthiga | CSE            |
++--------+------------------+
+
+6) select * from student
+ORDER BY stu_id ASC;
++------------+--------+------------------+
+| student_id | name   | DEPT           |
++------------+--------+------------------+
+|          1 | kani       | Eletronics   |
+|          2 | karthiga   | EEE          |
+|          3 | venisha| CIVIL            |
+|          4 | vani   | ECE              |
+|          5 | ruku   | CSE              |
++------------+--------+------------------+
+
+7) select * from student
+ORDER BY stu_id desc;
++------------+--------+------------------+
+| stu_id     | name   | dept            |
++------------+--------+------------------+
+|          5 | RUKU   | CSE              |
+|          4 | vani   | EEE              |
+|          3 | venisha | CIVIL           |
+|          2 | karthiga | EEE           |
+|          1 | kani   | Electronics      |
++------------+--------+------------------+
+
+8) select * from student LIMIT 2;
++------------+------+-----------+
+| stu_id | name     | major     |
++------------+------+-----------+
+|      1 | kani     | Electronics      |
+|      2 | karthiga | EEE       |
++------------+------+-----------+
+
+
+
